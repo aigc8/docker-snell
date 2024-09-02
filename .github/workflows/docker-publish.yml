@@ -49,7 +49,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
           tags: type=raw,value=latest
 
       # Build and push Docker image with Buildx (don't push on PR)
