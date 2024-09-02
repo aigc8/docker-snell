@@ -12,7 +12,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/snell-server
 
 jobs:
   build:
@@ -49,7 +49,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.IMAGE_NAME }}
           tags: type=raw,value=latest
 
       # Build and push Docker image with Buildx (don't push on PR)
