@@ -1,0 +1,12 @@
+services:
+  snell:
+    image: blackmini/snell-server
+    container_name: snell-server
+    ports:
+      - "6160:6160"
+    environment:
+      - INTERFACE=0.0.0.0
+      - PORT=6160
+      - PSK=your_psk_here
+      - IPV6=false
+    restart: unless-stopped
