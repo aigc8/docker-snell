@@ -4,7 +4,7 @@
 
 FROM alpine as source
 
-ARG SNELL_VER=4.0.1
+ARG SNELL_VER=4.1.0
 
 WORKDIR /root
 
